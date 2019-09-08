@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter_app_1/state_manage/parentWidget.dart';
+import 'package:flutter_app_1/state_manage/parentWidgetC.dart';
 import 'package:flutter_app_1/state_manage/tapboxA.dart';
+import 'package:flutter_app_1/text/textStyleShow.dart';
+import 'button/buttonStyleShow.dart';
 import 'echoRoute.dart';
-import 'newRoute.dart';
+import 'image_icon/iconShow.dart';
+import 'image_icon/imageIconShow.dart';
+import 'radio_check/radioCheckPage.dart';
+import 'switchAndCheckBoxTestRoute.dart';
+import 'textfield_form/formPage.dart';
+import 'textfield_form/textFieldPage.dart';
+import 'textfield_form/textFieldPage1.dart';
 
 void main()  => runApp(new MyApp());
 
@@ -17,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page" :(context) =>TapboxA(),
+        "new_page": (context) => FormTestRoute(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
