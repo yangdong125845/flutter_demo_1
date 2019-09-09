@@ -8,6 +8,7 @@ import 'button/buttonStyleShow.dart';
 import 'echoRoute.dart';
 import 'image_icon/iconShow.dart';
 import 'image_icon/imageIconShow.dart';
+import 'progress_indicator/progressIndicatorPage.dart';
 import 'radio_check/radioCheckPage.dart';
 import 'switchAndCheckBoxTestRoute.dart';
 import 'textfield_form/formPage.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => FormTestRoute(),
+        "new_page": (context) => ProgressIndicatorPage(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
