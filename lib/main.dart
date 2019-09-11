@@ -14,6 +14,11 @@ import 'switchAndCheckBoxTestRoute.dart';
 import 'textfield_form/formPage.dart';
 import 'textfield_form/textFieldPage.dart';
 import 'textfield_form/textFieldPage1.dart';
+import 'widget_layout/flex/flexPage.dart';
+import 'widget_layout/flex/flowPage.dart';
+import 'widget_layout/stack_positioned/stackPage.dart';
+import 'widget_layout/stack_positioned/stackPage1.dart';
+import 'widget_layout/wrap_flow/wrapPage.dart';
 
 void main()  => runApp(new MyApp());
 
@@ -28,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => ProgressIndicatorPage(),
+        "new_page": (context) => StackPage1(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
