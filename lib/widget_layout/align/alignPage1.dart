@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AlignPage extends StatelessWidget {
+class AlignPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -13,7 +13,7 @@ class AlignPage extends StatelessWidget {
         child: Align(
           widthFactor: 2,
           heightFactor: 2,
-          alignment: Alignment.topRight,
+          alignment: Alignment(2, 0.0),
           child: FlutterLogo(
             size: 60,
           ),

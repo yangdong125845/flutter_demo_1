@@ -5,6 +5,8 @@ import 'package:flutter_app_1/state_manage/parentWidgetC.dart';
 import 'package:flutter_app_1/state_manage/tapboxA.dart';
 import 'package:flutter_app_1/text/textStyleShow.dart';
 import 'button/buttonStyleShow.dart';
+import 'container/box/constrainedBoxPage.dart';
+import 'container/padding/paddingPage.dart';
 import 'echoRoute.dart';
 import 'image_icon/iconShow.dart';
 import 'image_icon/imageIconShow.dart';
@@ -14,6 +16,10 @@ import 'switchAndCheckBoxTestRoute.dart';
 import 'textfield_form/formPage.dart';
 import 'textfield_form/textFieldPage.dart';
 import 'textfield_form/textFieldPage1.dart';
+import 'widget_layout/align/alignPage.dart';
+import 'widget_layout/align/alignPage1.dart';
+import 'widget_layout/align/alignPage2.dart';
+import 'widget_layout/align/centerPage.dart';
 import 'widget_layout/flex/flexWidget.dart';
 import 'widget_layout/linear/linearWidget.dart';
 import 'widget_layout/linear/linearWidget1.dart';
@@ -36,7 +42,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => StackPage1(),
+        "new_page": (context) => ConstrainedBoxPage(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
