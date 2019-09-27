@@ -6,6 +6,7 @@ import 'package:flutter_app_1/state_manage/tapboxA.dart';
 import 'package:flutter_app_1/text/textStyleShow.dart';
 import 'button/buttonStyleShow.dart';
 import 'container/box/constrainedBoxPage.dart';
+import 'container/containerPage.dart';
 import 'container/decoratedBox/decoratedBoxPage.dart';
 import 'container/padding/paddingPage.dart';
 import 'container/transform/transformPage.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => TransformPage(),
+        "new_page": (context) => ContainerPage(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
