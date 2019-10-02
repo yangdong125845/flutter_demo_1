@@ -16,8 +16,37 @@ class MyDrawer extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(top: 38.0),
-                child:,
-              )
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: ClipOval(
+                        child: Image.asset(
+                          "images/portrait.png",
+                          width: 80,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Wendux",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              ),
+              Expanded(
+                  child: ListView(
+                    children: <Widget>[
+                      ListTile(
+                        leading: const Icon(Icons.add),
+                        title: const Text("Add account"),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.settings),
+                        title: const Text("Manage accounts"),
+                      )
+                    ],
+                  ))
             ],
           )),
     );

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'myDrawer.dart';
 
-class ScaffoldRoute extends StatefulWidget {
+class ScaffoldRoute1 extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _ScaffoldRouteState();
+  State<StatefulWidget> createState() => _ScaffoldRouteState1();
 }
 
-class _ScaffoldRouteState extends State<ScaffoldRoute>
+class _ScaffoldRouteState1 extends State<ScaffoldRoute1>
     with SingleTickerProviderStateMixin {
   int _selectedIndex = 1;
 
@@ -47,35 +47,38 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
         bottom: TabBar(
           //生成Tab菜单
           tabs: tabs
-              .map((e) =>
-              Tab(
-                text: e,
-              ))
+              .map((e) => Tab(
+                    text: e,
+                  ))
               .toList(),
           controller: _tabController,
         ),
       ),
       drawer: new MyDrawer(),
       //抽屉
-      bottomNavigationBar: BottomNavigationBar(
-        // 底部导航
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.business), title: Text("Business")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.school), title: Text("School")),
-        ],
-        currentIndex: _selectedIndex,
-        fixedColor: Colors.blue,
-        onTap: _onItemTapped,
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        shape: CircularNotchedRectangle(), //底部导航栏打一个圆形的洞
+        child: Row(
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home),
+            ),
+            SizedBox(), //中间位置空出
+            IconButton(icon: Icon(Icons.business))
+          ],
+          mainAxisAlignment: MainAxisAlignment.spaceAround, //均分底部导航栏横向空间
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         //悬浮按钮
-          child: Icon(Icons.add),
-          onPressed: _onAdd),
+        child: Icon(Icons.add),
+        onPressed: _onAdd,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: TabBarView(
-        children: tabs.map((e) { //创建3个Tab页
+        children: tabs.map((e) {
+          //创建3个Tab页
           return Container(
             alignment: Alignment.center,
             child: Text(
