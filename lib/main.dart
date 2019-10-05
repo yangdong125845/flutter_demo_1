@@ -18,6 +18,19 @@ import 'image_icon/iconShow.dart';
 import 'image_icon/imageIconShow.dart';
 import 'progress_indicator/progressIndicatorPage.dart';
 import 'radio_check/radioCheckPage.dart';
+import 'scrollable_widget/grid_view/gridViewBuilderPage.dart';
+import 'scrollable_widget/grid_view/gridViewCountPage.dart';
+import 'scrollable_widget/grid_view/gridViewExtentPage.dart';
+import 'scrollable_widget/grid_view/gridViewFixedCrossAxisPage.dart';
+import 'scrollable_widget/grid_view/gridViewMaxCrossAxisPage.dart';
+import 'scrollable_widget/list_view/infiniteListViewPage.dart';
+import 'scrollable_widget/list_view/listViewFlexPage.dart';
+import 'scrollable_widget/list_view/listViewIsuePage.dart';
+import 'scrollable_widget/list_view/listViewPage.dart';
+import 'scrollable_widget/list_view/listViewBuilderPage.dart';
+import 'scrollable_widget/list_view/listViewSeparatedPage.dart';
+import 'scrollable_widget/list_view/listViewSizedBoxPage.dart';
+import 'scrollable_widget/single_child_scrollview/singleChildScrollViewPage.dart';
 import 'switchAndCheckBoxTestRoute.dart';
 import 'textfield_form/formPage.dart';
 import 'textfield_form/textFieldPage.dart';
@@ -48,7 +61,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => ClipPage(),
+        "new_page": (context) => InfiniteListViewPage(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
