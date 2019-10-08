@@ -14,10 +14,19 @@ import 'container/scaffoldPage/galleryDemo.dart';
 import 'container/scaffoldPage/galleryDemo1.dart';
 import 'container/transform/transformPage.dart';
 import 'echoRoute.dart';
+import 'functional_widget/inherited_widget/InheritedWidgetPage.dart';
+import 'functional_widget/provider/cart/ProviderRoutePage.dart';
+import 'functional_widget/provider/cart/ProviderRoutePage1.dart';
+import 'functional_widget/provider/cart/optimize/ProviderRoutePage2.dart';
+import 'functional_widget/will_pop_scope/WillPopScopePage.dart';
 import 'image_icon/iconShow.dart';
 import 'image_icon/imageIconShow.dart';
 import 'progress_indicator/progressIndicatorPage.dart';
 import 'radio_check/radioCheckPage.dart';
+import 'scrollable_widget/control/scrollControllerTestPage.dart';
+import 'scrollable_widget/control/scrollControllerTestPage1.dart';
+import 'scrollable_widget/control/scrollNotificationPage.dart';
+import 'scrollable_widget/custom_scroll_view/customScrollViewPage.dart';
 import 'scrollable_widget/grid_view/gridViewBuilderPage.dart';
 import 'scrollable_widget/grid_view/gridViewCountPage.dart';
 import 'scrollable_widget/grid_view/gridViewExtentPage.dart';
@@ -61,7 +70,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => InfiniteListViewPage(),
+        "new_page": (context) => ProviderRoute2(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
