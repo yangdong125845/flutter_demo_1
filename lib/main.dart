@@ -14,10 +14,15 @@ import 'container/scaffoldPage/galleryDemo.dart';
 import 'container/scaffoldPage/galleryDemo1.dart';
 import 'container/transform/transformPage.dart';
 import 'echoRoute.dart';
+import 'functional_widget/FutureBuilder/futureBuilderPage.dart';
+import 'functional_widget/FutureBuilder/streamBuilderPage.dart';
+import 'functional_widget/dialog/dialogPage.dart';
 import 'functional_widget/inherited_widget/InheritedWidgetPage.dart';
 import 'functional_widget/provider/cart/ProviderRoutePage.dart';
 import 'functional_widget/provider/cart/ProviderRoutePage1.dart';
 import 'functional_widget/provider/cart/optimize/ProviderRoutePage2.dart';
+import 'functional_widget/theme/testNavBarPage.dart';
+import 'functional_widget/theme/themePage.dart';
 import 'functional_widget/will_pop_scope/WillPopScopePage.dart';
 import 'image_icon/iconShow.dart';
 import 'image_icon/imageIconShow.dart';
@@ -70,7 +75,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => ProviderRoute2(),
+        "new_page": (context) => DialogPage(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
