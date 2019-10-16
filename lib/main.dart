@@ -4,6 +4,7 @@ import 'package:flutter_app_1/state_manage/parentWidget.dart';
 import 'package:flutter_app_1/state_manage/parentWidgetC.dart';
 import 'package:flutter_app_1/state_manage/tapboxA.dart';
 import 'package:flutter_app_1/text/textStyleShow.dart';
+import 'advanced/event_handing_and_notification/listenerPage.dart';
 import 'button/buttonStyleShow.dart';
 import 'container/box/constrainedBoxPage.dart';
 import 'container/clip/clipPage.dart';
@@ -76,7 +77,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => DialogPage(),
+        "new_page": (context) => ListenerPage(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
