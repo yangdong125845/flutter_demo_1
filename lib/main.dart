@@ -4,7 +4,15 @@ import 'package:flutter_app_1/state_manage/parentWidget.dart';
 import 'package:flutter_app_1/state_manage/parentWidgetC.dart';
 import 'package:flutter_app_1/state_manage/tapboxA.dart';
 import 'package:flutter_app_1/text/textStyleShow.dart';
-import 'advanced/event_handing_and_notification/listenerPage.dart';
+import 'package:flutter_app_1/advanced/event_handing_and_notification/pointer_event/listenerPage.dart';
+import 'advanced/event_handing_and_notification/gesture_detector/bothDirectionPage.dart';
+import 'advanced/event_handing_and_notification/gesture_detector/drag.dart';
+import 'advanced/event_handing_and_notification/gesture_detector/dragVertical.dart';
+import 'advanced/event_handing_and_notification/gesture_detector/gestureConflictListenerPage.dart';
+import 'advanced/event_handing_and_notification/gesture_detector/gestureConflictPage.dart';
+import 'advanced/event_handing_and_notification/gesture_detector/gestureDetectorPage.dart';
+import 'advanced/event_handing_and_notification/gesture_detector/gestureRecognizerPage.dart';
+import 'advanced/event_handing_and_notification/gesture_detector/scaleStatePage.dart';
 import 'button/buttonStyleShow.dart';
 import 'container/box/constrainedBoxPage.dart';
 import 'container/clip/clipPage.dart';
@@ -77,7 +85,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => ListenerPage(),
+        "new_page": (context) => GestureConflictListenerPage(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
