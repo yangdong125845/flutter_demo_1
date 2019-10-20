@@ -13,6 +13,9 @@ import 'advanced/event_handing_and_notification/gesture_detector/gestureConflict
 import 'advanced/event_handing_and_notification/gesture_detector/gestureDetectorPage.dart';
 import 'advanced/event_handing_and_notification/gesture_detector/gestureRecognizerPage.dart';
 import 'advanced/event_handing_and_notification/gesture_detector/scaleStatePage.dart';
+import 'advanced/event_handing_and_notification/notification/listViewNotificationListenerPage.dart';
+import 'advanced/event_handing_and_notification/notification/notificationPage.dart';
+import 'advanced/event_handing_and_notification/notification/notificationRoutePagePreventBubble.dart';
 import 'button/buttonStyleShow.dart';
 import 'container/box/constrainedBoxPage.dart';
 import 'container/clip/clipPage.dart';
@@ -38,6 +41,7 @@ import 'image_icon/iconShow.dart';
 import 'image_icon/imageIconShow.dart';
 import 'progress_indicator/progressIndicatorPage.dart';
 import 'radio_check/radioCheckPage.dart';
+import 'route_page/mainPage.dart';
 import 'scrollable_widget/control/scrollControllerTestPage.dart';
 import 'scrollable_widget/control/scrollControllerTestPage1.dart';
 import 'scrollable_widget/control/scrollNotificationPage.dart';
@@ -85,7 +89,7 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        "new_page": (context) => GestureConflictListenerPage(),
+        "new_page": (context) => MainPage(),
       },
       home: new MyHomePage(title: "Flutter Demo Home Page",),
     );
