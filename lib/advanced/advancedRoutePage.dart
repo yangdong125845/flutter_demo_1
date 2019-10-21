@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'animation/animationRoutePage.dart';
 import 'event_handing_and_notification/eventHandNotificationRoutePage.dart';
 
 class AdvancedRoutePage extends StatelessWidget {
@@ -20,6 +21,15 @@ class AdvancedRoutePage extends StatelessWidget {
               }));
             },
             child: Text("事件处理与通知"),
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(new MaterialPageRoute(builder: (context) {
+                return AnimationRoutePage();
+              }));
+            },
+            child: Text("动画"),
           ),
         ],
       ),
