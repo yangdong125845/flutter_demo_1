@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'animated_switcher/animationSwitcherPage.dart';
-import 'animation_structure/animationStructureRoutePage.dart';
-import 'defined_route_switch_animation/switchAnimationPage.dart';
-import 'hero_animation/heroAnimationRoute.dart';
-import 'stagger_animation/StaggerRoute.dart';
+import 'cupertinoAnimationPage.dart';
+import 'pageRouteBuilderPage.dart';
+import 'pageRoutePage.dart';
+import 'pageRoutePage1.dart';
 
-class AnimationRoutePage extends StatelessWidget {
+class SwitchAnimationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -21,50 +20,37 @@ class AnimationRoutePage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (context) {
-                return AnimationStructureRoutePage();
+                return CupertinoAnimationRoutePage();
               }));
             },
-            child: Text("动画结构"),
+            child: Text("CupertinoAnimationRoutePage"),
           ),
-
           RaisedButton(
             onPressed: () {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (context) {
-                return SwitchAnimationPage();
+                return PageRouteBuilderPage();
               }));
             },
-            child: Text("自定义路由过渡动画"),
+            child: Text("PageRouteBuilderPage"),
           ),
-
           RaisedButton(
             onPressed: () {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (context) {
-                return HeroAnimationRoute();
+                return PageRoutePage();
               }));
             },
-            child: Text("Hero动画"),
+            child: Text("PageRoutePage"),
           ),
-
           RaisedButton(
             onPressed: () {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (context) {
-                return StaggerRoute();
+                return PageRoutePage1();
               }));
             },
-            child: Text("交织动画"),
-          ),
-
-          RaisedButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(new MaterialPageRoute(builder: (context) {
-                return AnimationSwitcherPage();
-              }));
-            },
-            child: Text("通用“切换动画”组件"),
+            child: Text("PageRoutePage1"),
           ),
         ],
       ),
