@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_1/advanced/event_handing_and_notification/eventHandNotificationRoutePage.dart';
 
-import 'AnimatedSwitcherCounterRoute.dart';
-import 'BossAnimatedSwitcherCounterRoute.dart';
-import 'SuperAnimatedSwitcherCounterRoute.dart';
-import 'SuperAnimatedSwitcherCounterRoute_improve.dart';
+import 'combination_widget/GradientButtonPage.dart';
+import 'custom_gradient_circular_progress_indicator/GrdientCircularProgressPage.dart';
+import 'custompaint_canvas_widget/CustomPaintPage.dart';
+import 'turnbox/TurnBoxPage.dart';
 
-class AnimationSwitcherPage extends StatelessWidget {
+class CustomWidgetRoutePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("动画"),
+        title: Text("AcvancedRoutePage"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -20,38 +21,37 @@ class AnimationSwitcherPage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (context) {
-                return AnimatedSwitcherCounterRoute();
+                return GradientButtonPage();
               }));
             },
-            child: Text("+1动画"),
+            child: Text("组合现有组件"),
           ),
           RaisedButton(
             onPressed: () {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (context) {
-                return SuperAnimatedSwitcherCounterRoute();
+                return TurnBoxPage();
               }));
             },
-            child: Text("高级用法1"),
+            child: Text("组合实例：TurnBox"),
           ),
           RaisedButton(
             onPressed: () {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (context) {
-                return SuperAnimatedSwitcherCounterRouteSuper();
+                return CustomPaintPage();
               }));
             },
-            child: Text("高级用法(improve)"),
+            child: Text("自绘组件（CustomPaint与Canvas）"),
           ),
-
           RaisedButton(
             onPressed: () {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (context) {
-                return BossAnimatedSwitcherCounterRoute();
+                return GradientCircularProgressPage();
               }));
             },
-            child: Text("高级用法(BOSS)"),
+            child: Text("自绘实例：圆形背景渐变进度条"),
           ),
         ],
       ),

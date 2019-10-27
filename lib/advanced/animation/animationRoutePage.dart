@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'animated_switcher/animationSwitcherPage.dart';
 import 'animation_structure/animationStructureRoutePage.dart';
+import 'animation_transition_widget/animationTransitionWidgetRoutePage.dart';
 import 'defined_route_switch_animation/switchAnimationPage.dart';
 import 'hero_animation/heroAnimationRoute.dart';
 import 'stagger_animation/StaggerRoute.dart';
@@ -65,6 +66,16 @@ class AnimationRoutePage extends StatelessWidget {
               }));
             },
             child: Text("通用“切换动画”组件"),
+          ),
+
+          RaisedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(new MaterialPageRoute(builder: (context) {
+                return AnimationTransitionWidgetRoutePage();
+              }));
+            },
+            child: Text("动画过渡组件"),
           ),
         ],
       ),
