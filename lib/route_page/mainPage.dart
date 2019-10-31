@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_1/advanced/event_handing_and_notification/notification/notificationRoutePagePreventBubble.dart';
-
 import 'package:flutter_app_1/advanced/advancedRoutePage.dart';
 
 class MainPage extends StatelessWidget {
