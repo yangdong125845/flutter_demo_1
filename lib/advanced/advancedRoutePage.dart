@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'animation/animationRoutePage.dart';
 import 'custom_widget/customWidgetRoutePage.dart';
 import 'event_handing_and_notification/eventHandNotificationRoutePage.dart';
+import 'file_operate_and_network_request/dio_chunks/dioChunkPage.dart';
 import 'file_operate_and_network_request/fileNetworkRoutePage.dart';
 
 class AdvancedRoutePage extends StatelessWidget {
@@ -50,6 +51,15 @@ class AdvancedRoutePage extends StatelessWidget {
               }));
             },
             child: Text("文件操作与网络请求"),
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(new MaterialPageRoute(builder: (context) {
+                return DioChunksPage();
+              }));
+            },
+            child: Text("DIO:Http分块下载"),
           ),
         ],
       ),
