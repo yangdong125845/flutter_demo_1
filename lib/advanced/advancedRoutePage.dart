@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'animation/animationRoutePage.dart';
 import 'custom_widget/customWidgetRoutePage.dart';
 import 'event_handing_and_notification/eventHandNotificationRoutePage.dart';
-import 'file_operate_and_network_request/dio_chunks/dioChunkPage.dart';
 import 'file_operate_and_network_request/fileNetworkRoutePage.dart';
+import 'package_plugin/packagePluginRoutePage.dart';
 
 class AdvancedRoutePage extends StatelessWidget {
   @override
@@ -56,11 +56,12 @@ class AdvancedRoutePage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (context) {
-                return DioChunksPage();
+                return PackagePluginRoutePage();
               }));
             },
-            child: Text("DIO:Http分块下载"),
+            child: Text("包与插件"),
           ),
+
         ],
       ),
     );

@@ -73,10 +73,7 @@ class _DioChunksState extends State<DioChunksPage> {
     Future<Response> downloadChunk(url, start, end, no) async {
       progress.add(0); //progress记录每一块已接受数据的长度
       --end;
-      String localUrl = savePath + "temp$no";
-      File f = new File(localUrl);
-      f.createSync();
-      return dio.download(url, localUrl, //临时文件按照块的序号命名，方便最后合并
+      return dio.download(url, savePath + "temp$no", //临时文件按照块的序号命名，方便最后合并
           onReceiveProgress: createCallback(no), //创建进度回调，后面实现
           options: Options(
             headers: {"range": "bytes=$start-$end"}, // 指定请求的内容区间

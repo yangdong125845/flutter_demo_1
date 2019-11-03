@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter_app_1/state_manage/parentWidget.dart';
@@ -76,51 +77,55 @@ import 'widget_layout/stack_positioned/stackPage.dart';
 import 'widget_layout/stack_positioned/stackPage1.dart';
 import 'widget_layout/wrap_flow/wrapPage.dart';
 
-void main()  => runApp(new MyApp());
+var cameras;
+
+void main() async {
+  //获取可用摄像头列表，cameras为全局变量
+  cameras = await availableCameras();
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new MaterialApp (
+    return new MaterialApp(
       title: "Flutter Demo",
       theme: new ThemeData(
-        primarySwatch:Colors.blue,
+        primarySwatch: Colors.blue,
       ),
-
       routes: {
         "new_page": (context) => MainPage(),
       },
-      home: new MyHomePage(title: "Flutter Demo Home Page",),
+      home: new MyHomePage(
+        title: "Flutter Demo Home Page",
+      ),
     );
   }
-
 }
 
 class MyHomePage extends StatefulWidget {
-
-  MyHomePage({Key key,this.title}) :super(key:key);
+  MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
   State<StatefulWidget> createState() => new _MyHomePageState();
-
 }
 
 class RandomWordsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
- final wordPair = new WordPair.random();
+    final wordPair = new WordPair.random();
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: new Text(wordPair.toString()),
     );
   }
-  
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -145,7 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
 //                Navigator.push(context, new MaterialPageRoute(builder: (context)=> new NewRoute())); //第一种方法
 //                Navigator.pushNamed(context, "new_page");
-                Navigator.of(context).pushNamed("new_page",arguments: "hi,EchoRoute");
+                Navigator.of(context)
+                    .pushNamed("new_page", arguments: "hi,EchoRoute");
               },
             ),
             RandomWordsWidget(),
@@ -154,16 +160,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: _incrementCounter,
-      tooltip: "Increment",
-      child: new Icon(Icons.add),
+        tooltip: "Increment",
+        child: new Icon(Icons.add),
       ),
     );
   }
 
   void _incrementCounter() {
     setState(() {
-      _counter ++;
+      _counter++;
     });
   }
-
 }

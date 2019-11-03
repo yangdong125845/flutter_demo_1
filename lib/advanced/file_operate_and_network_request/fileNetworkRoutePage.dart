@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dio_chunks/dioChunkPage.dart';
 import 'file_operate/FileOperationPage.dart';
 import 'http_request/HttpTestPage.dart';
 import 'http_request_dio/dioHttpRequestPage.dart';
+import 'socket_api/socketApiPage.dart';
+import 'web_sockets/WebSocketPage.dart';
 
 class FileNetWorkRoutePage extends StatelessWidget {
   @override
@@ -39,7 +42,35 @@ class FileNetWorkRoutePage extends StatelessWidget {
                 return DioHttpRequestPage();
               }));
             },
-            child: Text("DioHttp请求(Issue)"),
+            child: Text("DioHttp请求"),
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(new MaterialPageRoute(builder: (context) {
+                return DioChunksPage();
+              }));
+            },
+            child: Text("DIO:Http分块下载(Issue)"),
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(new MaterialPageRoute(builder: (context) {
+                return WebSocketPage();
+              }));
+            },
+            child: Text("WebSocket"),
+          ),
+
+          RaisedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(new MaterialPageRoute(builder: (context) {
+                return SocketApiPage();
+              }));
+            },
+            child: Text("使用Socket API(Issue)"),
           ),
         ],
       ),
