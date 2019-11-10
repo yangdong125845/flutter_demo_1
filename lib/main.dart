@@ -1,11 +1,13 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter_app_1/i10n/localization_intl.dart';
 import 'package:flutter_app_1/state_manage/parentWidget.dart';
 import 'package:flutter_app_1/state_manage/parentWidgetC.dart';
 import 'package:flutter_app_1/state_manage/tapboxA.dart';
 import 'package:flutter_app_1/text/textStyleShow.dart';
 import 'package:flutter_app_1/advanced/event_handing_and_notification/pointer_event/listenerPage.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'advanced/event_handing_and_notification/gesture_detector/bothDirectionPage.dart';
 import 'advanced/event_handing_and_notification/gesture_detector/drag.dart';
 import 'advanced/event_handing_and_notification/gesture_detector/dragVertical.dart';
@@ -17,6 +19,7 @@ import 'advanced/event_handing_and_notification/gesture_detector/scaleStatePage.
 import 'advanced/event_handing_and_notification/notification/listViewNotificationListenerPage.dart';
 import 'advanced/event_handing_and_notification/notification/notificationPage.dart';
 import 'advanced/event_handing_and_notification/notification/notificationRoutePagePreventBubble.dart';
+import 'advanced/internationalized/internationizedPage.dart';
 import 'button/buttonStyleShow.dart';
 import 'container/box/constrainedBoxPage.dart';
 import 'container/clip/clipPage.dart';
@@ -32,6 +35,7 @@ import 'functional_widget/FutureBuilder/streamBuilderPage.dart';
 import 'functional_widget/dialog/dialogPage.dart';
 import 'functional_widget/dialog/errorDeleteDialog.dart';
 import 'functional_widget/inherited_widget/InheritedWidgetPage.dart';
+import 'functional_widget/inherited_widget/outSidePage.dart';
 import 'functional_widget/provider/cart/ProviderRoutePage.dart';
 import 'functional_widget/provider/cart/ProviderRoutePage1.dart';
 import 'functional_widget/provider/cart/optimize/ProviderRoutePage2.dart';
@@ -90,16 +94,34 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
+      onGenerateTitle: (context) {
+        //此时context在Localizations的子树中
+        return DemoLocalizations
+            .of(context)
+            .title;
+      },
       title: "Flutter Demo",
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
       routes: {
-        "new_page": (context) => MainPage(),
+        "new_page": (context) => InternationalizedPage(),
       },
       home: new MyHomePage(
         title: "Flutter Demo Home Page",
       ),
+      localizationsDelegates: [
+        //本地化的代理类
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        //注册我们的Delegate()
+        DemoLocalizationsDelegate()
+      ],
+      supportedLocales: [
+        const Locale('en', 'US'), //美国英语
+        const Locale("zh", "CN"), //中文简体
+        //其他Locales
+      ],
     );
   }
 }

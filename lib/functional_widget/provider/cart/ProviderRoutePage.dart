@@ -12,37 +12,46 @@ class ProviderRoute extends StatefulWidget {
 class _ProviderRouteState extends State<ProviderRoute> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    print("根节点build了");
     return Scaffold(
       appBar: AppBar(
         title: Text("ProviderRoute"),
       ),
+
       body: Center(
-        child: ChangeNotifierProvider<CartModel>(
-          data: CartModel(),
-          child: Builder(builder: (context) {
-            print("child build");
-            return Column(
-              children: <Widget>[
-                Builder(builder: (context) {
-                  print("Text build");
-                  var cart = ChangeNotifierProvider.of<CartModel>(context);
-                  return Text("总价: ${cart.totalPrice}");
-                }),
-                Builder(builder: (context) {
-                  print("RaiseButton build"); //在后面优化部分用到
-                  return RaisedButton(
-                    onPressed: () {
-                      //给购物车中添加商品，添加后总价会更新
-                      ChangeNotifierProvider.of<CartModel>(context)
-                          .add(Item(20.0, 1));
-                    },
-                    child: Text("添加商品"),
+        child: Column(
+          children: <Widget>[
+            Builder(builder: (context) {
+              print("Builder节点（ChangeNotifierProvider的父节点） build");
+              return ChangeNotifierProvider<CartModel>(
+                data: CartModel(),
+                child: Builder(builder: (context) {
+                  print("child build");
+                  return Column(
+                    children: <Widget>[
+                      Builder(builder: (context) {
+                        print("Text build");
+                        var cart = ChangeNotifierProvider.of<CartModel>(
+                            context);
+                        return Text("总价: ${cart.totalPrice}");
+                      }),
+                      Builder(builder: (context) {
+                        print("RaiseButton build"); //在后面优化部分用到
+                        return RaisedButton(
+                          onPressed: () {
+                            //给购物车中添加商品，添加后总价会更新
+                            ChangeNotifierProvider.of<CartModel>(context)
+                                .add(Item(20.0, 1));
+                          },
+                          child: Text("添加商品"),
+                        );
+                      })
+                    ],
                   );
-                })
-              ],
-            );
-          }),
+                }),
+              );
+            })
+          ],
         ),
       ),
     );

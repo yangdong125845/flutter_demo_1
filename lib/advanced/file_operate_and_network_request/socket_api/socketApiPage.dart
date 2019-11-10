@@ -43,7 +43,7 @@ class _SocketApiState extends State<SocketApiPage> {
     socket.writeln();
     await socket.flush(); //发送
     //读取返回内容
-//    _response = await socket.transform(utf8.decoder).join();
+    //  _response = await socket.transform(utf8.decoder).join();
     setState(() {});
     await socket.close();
   }

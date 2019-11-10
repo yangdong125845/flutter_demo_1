@@ -13,6 +13,9 @@ class _InheritedWidgetPageState extends State<InheritedWidgetPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(
+        "_InheritedWidgetPageState(BuildContext context)--------------------------------");
+
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(

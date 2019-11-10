@@ -3,6 +3,7 @@ import 'animation/animationRoutePage.dart';
 import 'custom_widget/customWidgetRoutePage.dart';
 import 'event_handing_and_notification/eventHandNotificationRoutePage.dart';
 import 'file_operate_and_network_request/fileNetworkRoutePage.dart';
+import 'internationalized/internationalizedRoutePage.dart';
 import 'package_plugin/packagePluginRoutePage.dart';
 
 class AdvancedRoutePage extends StatelessWidget {
@@ -61,7 +62,15 @@ class AdvancedRoutePage extends StatelessWidget {
             },
             child: Text("包与插件"),
           ),
-
+          RaisedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(new MaterialPageRoute(builder: (context) {
+                return InternationalizedRoutePage();
+              }));
+            },
+            child: Text("国际化"),
+          ),
         ],
       ),
     );
